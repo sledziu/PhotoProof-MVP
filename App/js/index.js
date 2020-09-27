@@ -19,7 +19,25 @@ xui.Class('App', 'xui.Module',{
         iniComponents : function(){
             // [[Code created by CrossUI RAD Studio
             var host=this, children=[], append=function(child){children.push(child.get(0));};
-
+            
+            append(
+                xui.create("xui.UI.Image")
+                .setHost(host,"xui_ui_image5")
+                .setLeft("17.523809523809526em")
+                .setTop("11.428571428571429em")
+                .setWidth("26.97142857142857em")
+                .setHeight("26.20952380952381em")
+                .setSrc("{xui.ini.img_pic}")
+            );
+            
+            append(
+                xui.create("xui.UI.HTMLButton")
+                .setHost(host,"xui_ui_htmlbutton3")
+                .setLeft("27.428571428571427em")
+                .setTop("38.857142857142854em")
+                .setCaption("Take Photo")
+            );
+            
             return children;
             // ]]Code created by CrossUI RAD Studio
         },
@@ -28,7 +46,8 @@ xui.Class('App', 'xui.Module',{
         customAppend : function(parent, subId, left, top){
             // "return false" will cause all the internal UI controls will be added to the parent panel
             return false;
-        }
+        },
+        functions:{ }
         /*,
         // To determine how properties affects this module
         propSetAction : function(prop){
