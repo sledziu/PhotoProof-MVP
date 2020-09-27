@@ -1,0 +1,105 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "PhotoProof MVP API",
+    "version": "1.0",
+    "description": "Photo Proof MVP sanbox API",
+    "contact": {
+      "name": "Marcin Sleziona",
+      "url": "dev.photoproof.tech",
+      "email": "msl@photoproof.tech"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "dev"
+    }
+  ],
+  "paths": {
+    "/users/user{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  },
+                  "example-2": {
+                    "value": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-users-user-id"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "user": {
+        "title": "user",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "id": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "userauth": {
+        "type": "oauth2",
+        "flows": {
+          "password": {
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          },
+          "implicit": {
+            "authorizationUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          },
+          "clientCredentials": {
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          },
+          "authorizationCode": {
+            "authorizationUrl": "",
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": {}
+          }
+        }
+      }
+    }
+  }
+}
